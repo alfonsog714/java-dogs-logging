@@ -1,4 +1,4 @@
-package com.lambdaschool.dogsinitial;
+package com.lambdaschool.dogsinitial.model;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -59,5 +59,15 @@ public class Dog
     public void setApartmentSuitable(boolean apartmentSuitable)
     {
         this.apartmentSuitable = apartmentSuitable;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "id=" + id +
+                ", breed='" + breed + '\'' +
+                ", weight=" + weight +
+                ", apartmentSuitable=" + apartmentSuitable +
+                '}';
     }
 }
