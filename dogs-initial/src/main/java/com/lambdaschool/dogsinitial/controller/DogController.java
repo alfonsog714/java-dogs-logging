@@ -25,12 +25,12 @@ public class DogController
 
     @Autowired
     RabbitTemplate rt;
-    // localhost:8080/dogs/dogs
+    // localhost:2019/dogs/dogs
     @GetMapping(value = "/dogs")
     public ResponseEntity<?> getAllDogs()
     {
-        logger.info("/data/allemployees accessed");
-        MessageDetail message = new MessageDetail("/data/dogs accessed", 7, false);
+        logger.info("/dogs/dogs accessed");
+        MessageDetail message = new MessageDetail("/dogs/dogs accessed", 7, false);
         rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
 
         return new ResponseEntity<>(DogsinitialApplication.ourDogList.dogList, HttpStatus.OK);
@@ -40,8 +40,8 @@ public class DogController
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> getDogDetail(@PathVariable long id)
     {
-        logger.trace("/data/employee/" + id + " accessed");
-        MessageDetail message = new MessageDetail("/data/employee", 1, true);
+        logger.trace("/dogs/" + id + " accessed");
+        MessageDetail message = new MessageDetail("/dogs/id", 1, true);
         rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
 
         Dog rtnDog;
