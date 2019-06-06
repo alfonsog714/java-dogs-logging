@@ -14,7 +14,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 @SpringBootApplication
 public class DogsinitialApplication
 {
-    public static final String EXCHANGE_NAME = "LambdaServer";
+    public static final String EXCHANGE_NAME = "DogServer";
     public static final String QUEUE_NAME_LOW = "LowPriorityQueue";
     public static final String QUEUE_NAME_HIGH = "HighPriorityQueue";
 

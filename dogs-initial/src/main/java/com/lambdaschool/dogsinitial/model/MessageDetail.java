@@ -1,6 +1,8 @@
 package com.lambdaschool.dogsinitial.model;
 
-public class MessageDetail {
+import java.io.Serializable;
+
+public class MessageDetail implements Serializable {
     private String text;
     private int priority;
     private boolean secret;

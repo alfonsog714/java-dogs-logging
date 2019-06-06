@@ -1,6 +1,8 @@
 package com.lambdaschool.dogsinitial.model;
 
-import com.lambdaschool.webemployees.exception.ValidationError;
+
+
+import com.lambdaschool.dogsinitial.exception.ValidationError;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

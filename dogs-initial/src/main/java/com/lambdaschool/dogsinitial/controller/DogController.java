@@ -42,7 +42,7 @@ public class DogController
     {
         logger.trace("/data/employee/" + id + " accessed");
         MessageDetail message = new MessageDetail("/data/employee", 1, true);
-        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_LOW, message);
+        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_HIGH, message);
 
         Dog rtnDog;
 
@@ -59,6 +59,10 @@ public class DogController
     @GetMapping(value = "/breeds/{breed}")
     public ResponseEntity<?> getDogBreeds (@PathVariable String breed)
     {
+        logger.trace("/dogs/breeds" + breed + " accessed");
+        MessageDetail message = new MessageDetail("/dogs/breed", 1, true);
+        rt.convertAndSend(DogsinitialApplication.QUEUE_NAME_LOW, message);
+
         ArrayList<Dog> rtnDogs = DogsinitialApplication.ourDogList.
                 findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase()));
 
